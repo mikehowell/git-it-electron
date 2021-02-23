@@ -97,7 +97,7 @@ module.exports = function menu (app, mainWindow) {
           click: function (item, focusedWindow) {
             if (focusedWindow) {
               var path = require('path').join(locale.getLocaleBuiltPath(locale.getCurrentLocale(focusedWindow)), 'pages', 'index.html')
-              focusedWindow.loadURL(path)
+              focusedWindow.loadURL('file://' + path)
             }
           }
         },
@@ -106,7 +106,7 @@ module.exports = function menu (app, mainWindow) {
           click: function (item, focusedWindow) {
             if (focusedWindow) {
               var path = require('path').join(locale.getLocaleBuiltPath(locale.getCurrentLocale(focusedWindow)), 'pages', 'dictionary.html')
-              focusedWindow.loadURL(path)
+              focusedWindow.loadURL('file://' + path)
             }
           }
         },
@@ -115,7 +115,7 @@ module.exports = function menu (app, mainWindow) {
           click: function (item, focusedWindow) {
             if (focusedWindow) {
               var path = require('path').join(locale.getLocaleBuiltPath(locale.getCurrentLocale(focusedWindow)), 'pages', 'resources.html')
-              focusedWindow.loadURL(path)
+              focusedWindow.loadURL('file://' + path)
             }
           }
         }
@@ -127,7 +127,7 @@ module.exports = function menu (app, mainWindow) {
         {
           label: 'Repository',
           click: function () {
-            require('shell').openExternal('http://github.com/jlord/git-it-electron')
+            require('electron').shell.openExternal('http://github.com/jlord/git-it-electron')
           }
         },
         {
@@ -141,7 +141,7 @@ module.exports = function menu (app, mainWindow) {
           click: function (item, focusedWindow) {
             if (focusedWindow) {
               var path = require('path').join(locale.getLocaleBuiltPath(locale.getCurrentLocale(focusedWindow)), 'pages', 'about.html')
-              focusedWindow.loadURL(path)
+              focusedWindow.loadURL('file://' + path)
             }
           }
         }
